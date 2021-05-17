@@ -1,0 +1,48 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 8899
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: '0.0.0.0:9090'
+experimental:
+  ignore-resolve-fail: true
+dns:
+  enable: true
+  ipv6: false
+  listen: '0.0.0.0:5450'
+  enhanced-mode: fake-ip
+  default-nameserver:
+    - 119.29.29.29
+    - 180.76.76.76
+    - 223.5.5.5
+    - 223.6.6.6
+    - 119.28.28.28
+    - 1.0.0.1
+    - 208.67.222.222
+    - 1.2.4.8
+    - 1.1.1.1
+    - 117.50.11.11 # ONE DNS拦截版 恶意网站拦截、广告过滤
+    - 117.50.10.10 # ONE DNS纯净版 直接返回其真实的响应结果
+    - 114.114.114.114 # 114DNS
+  fake-ip-filter:
+    - '*.lan'
+    - '*.edu.cn'
+    - localhost.ptlogin2.qq.com
+    - '*.*.*.srv.nintendo.net'
+    - '*.*.stun.playstation.net'
+    - xbox.*.*.microsoft.com
+    - '*.*.xboxlive.com'
+    - '*.msftncsi.com'
+    - 'www.msftconnecttest.com'
+  nameserver:
+    - https://doh.pub/dns-query
+    - tls://dns.sb:853
+    - tls://dns.google:853
+    - tls://dns.adguard.com:853
+    - https://dns.alidns.com/dns-query
+    - https://1.1.1.1/dns-query
+clash-for-android: 
+  # append-system-dns: true # 追加系统 DNS 到 nameserver 
+  ui-subtitle-pattern: "[\u4e00-\u9fa5]{2,4}"
