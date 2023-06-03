@@ -1,2 +1,2 @@
-# ClashRules
-自用Clash规则
+# KMS
+自用KMS脚本
